@@ -1,0 +1,110 @@
+# Blender MTL File: 'rpgmatoran_texturedao.blend'
+# Material Count: 10
+newmtl 
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+
+
+newmtl GunBase.001_LightstoneRifleAOMap
+Ns 92.156863
+Ka 0.000000 0.000000 0.000000
+Kd 0.240480 0.240480 0.240480
+Ks 0.250000 0.250000 0.250000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd .
+
+
+newmtl Heartlight/eye/Brai_MatoranAOMap
+Ns 92.156863
+Ka 0.000000 0.000000 0.000000
+Kd 0.325035 0.578434 0.000000
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd .
+
+
+newmtl Lightstone.001_LightstoneRifleAOMap
+Ns 92.156863
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.495150 0.000000
+Ks 0.250000 0.250000 0.250000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd .
+
+
+newmtl OrangeDetail.001_LightstoneRifleAOMap
+Ns 92.156863
+Ka 0.000000 0.000000 0.000000
+Kd 0.512000 0.263150 0.000000
+Ks 0.250000 0.250000 0.250000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd .
+
+
+newmtl PrimaryArmor.002
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.106287 0.000000 0.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 0
+map_Kd C:\\Users\\David\\Dropbox\\BNG RPG folder\\In progress models .blends\\AppData\\Local\\Microsoft\\Windows\\Temporary Internet Files\\Content.IE5\\Pictures\\RPG\\metal_texture_1_by_wojtar_stock.jpg
+
+
+newmtl PrimaryArmor_MatoranAOMap
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.106287 0.000000 0.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 0
+map_Kd .
+
+
+newmtl SecondaryArmor_MatoranAOMap
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd .
+
+
+newmtl Trigger.001_LightstoneRifleAOMap
+Ns 92.156863
+Ka 0.000000 0.000000 0.000000
+Kd 0.512000 0.512000 0.512000
+Ks 0.250000 0.250000 0.250000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd .
+
+
+newmtl gear.001_MatoranAOMap
+Ns 92.156863
+Ka 0.000000 0.000000 0.000000
+Kd 0.178492 0.178492 0.178492
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd .
+
+

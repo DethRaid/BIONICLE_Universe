@@ -1,0 +1,16 @@
+RAIN{indie} v1.3.0
+--------------
+
+Welcome to RAIN{indie}, a powerful tool for adding AI capabilities to your Unity project.  RAIN{indie} is an evolution of our prior product, RAIN{one}, and incorporates its most popular features, adds new capabilities, and provides a streamlined process for setting up and working with AI.  
+
+1.3.0 Release notes:
+--------------
+-Unity 4 compatible
+
+- Support for simple rigging of AI with Behavior Trees, Pathfinding, Movement, and Sensors
+- Use out-of-the-box actions (movement, sensing, animation, and audio) or create your own Custom Actions
+- A Recast-based generator for creating navigation graphs automatically from level geometry
+- Navigation-grid pathfinding and pathfollowing built in
+- Box and sphere sensors, plus capabilities for tagging detectable objects in your scene
+
+- Documentation, forums, and sample projects available at support.rivaltheory.com

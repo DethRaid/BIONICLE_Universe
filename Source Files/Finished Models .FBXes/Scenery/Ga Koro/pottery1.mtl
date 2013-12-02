@@ -1,0 +1,11 @@
+# 
+# Wavefront material file
+# Created with Kaydara FBX
+# 
+
+newmtl Material_013__MNOLGIICh1_png
+map_Kd MNOLGIICh1.png
+Ka 0.000000 0.000000 0.000000
+Kd 0.386832 0.140500 0.000000
+illum 1
+Tr 1.000000

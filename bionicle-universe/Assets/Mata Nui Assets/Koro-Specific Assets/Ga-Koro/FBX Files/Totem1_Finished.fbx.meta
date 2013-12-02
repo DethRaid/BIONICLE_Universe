@@ -1,0 +1,111 @@
+fileFormatVersion: 2
+guid: 1bd1ac48b0a38184e8e9cf65c20b5e87
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100070: //RootNode
+    400070: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Cube_629
+    4300002: Cube_628
+    4300004: Cube_627
+    4300006: Cube_626
+    4300008: Cube_625
+    4300010: Cube_624
+    4300012: Cube_623
+    4300014: Cube_622
+    4300016: Cube_621
+    4300018: Cube_620
+    4300020: Cube_619
+    4300022: Cube_618
+    4300024: Cube_617
+    4300026: Cube_616
+    4300028: Cube_615
+    4300030: Cube_614
+    4300032: Cube_613
+    4300034: Cube_612
+    4300036: Cube_611
+    4300038: Cube_610
+    4300040: Cube_609
+    4300042: Cube_608
+    4300044: Cube_596
+    4300046: Cube_595
+    4300048: Cube_594
+    4300050: Cube_593
+    4300052: Cube_592
+    4300054: Cube_591
+    4300056: Cube_590
+    4300058: Cube_589
+    4300060: Cube_588
+    4300062: Cube_587
+    4300064: Cube_586
+    4300066: Cube_527
+    4300068: Cube_526
+    4300070: Cylinder_086
+    4300072: Cylinder_087
+    4300074: Cube_525
+    4300076: Cylinder_085
+    4300078: Cube_063
+    4300080: Plane_083
+    4300082: Plane_082
+    4300084: Plane_081
+    4300086: Cylinder_008
+    4300088: Cylinder_007
+    4300090: Cube_051
+    4300092: Cube_049
+    6400000: //RootNode
+    7400000: Default Take //// Totem1_Finished
+    11100000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 0
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 0
+  userData: 

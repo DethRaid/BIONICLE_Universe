@@ -1,0 +1,119 @@
+fileFormatVersion: 2
+guid: b04cd636fc39142408d4be327d37d2f1
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: Seaweed1_1
+    100002: Seaweed1_Base
+    100004: Seaweed_v1_Skeleton
+    100006: Seaweed2_6
+    100008: //RootNode
+    100010: Seaweed3_2
+    100012: Seaweed3_1
+    100014: Seaweed3_Base
+    100016: Seaweed_v3_Skeleton
+    100018: Seaweed_v1
+    100020: Seaweed_v2
+    100022: Seaweed_v3
+    100024: Seaweed2_5
+    100026: Seaweed2_4
+    100028: Seaweed2_3
+    100030: Seaweed2_2
+    100032: Seaweed2_1
+    100034: Seaweed1_4
+    100036: Seaweed1_3
+    100038: Seaweed1_2
+    100040: Seaweed2_Base
+    100042: Seaweed_v2_Skeleton
+    100044: Seaweed3_6
+    100046: Seaweed3_5
+    100048: Seaweed3_4
+    100050: Seaweed3_3
+    100052: Seaweed1_6
+    100054: Seaweed1_5
+    400000: Seaweed1_1
+    400002: Seaweed1_Base
+    400004: Seaweed_v1_Skeleton
+    400006: Seaweed2_6
+    400008: //RootNode
+    400010: Seaweed3_2
+    400012: Seaweed3_1
+    400014: Seaweed3_Base
+    400016: Seaweed_v3_Skeleton
+    400018: Seaweed_v1
+    400020: Seaweed_v2
+    400022: Seaweed_v3
+    400024: Seaweed2_5
+    400026: Seaweed2_4
+    400028: Seaweed2_3
+    400030: Seaweed2_2
+    400032: Seaweed2_1
+    400034: Seaweed1_4
+    400036: Seaweed1_3
+    400038: Seaweed1_2
+    400040: Seaweed2_Base
+    400042: Seaweed_v2_Skeleton
+    400044: Seaweed3_6
+    400046: Seaweed3_5
+    400048: Seaweed3_4
+    400050: Seaweed3_3
+    400052: Seaweed1_6
+    400054: Seaweed1_5
+    4300000: Seaweed_v3
+    4300002: Seaweed_v2
+    4300004: Seaweed_v1
+    7400000: Default Take
+    11100000: //RootNode
+    13700000: Seaweed_v1
+    13700002: Seaweed_v2
+    13700004: Seaweed_v3
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 3
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 1
+  userData: 
