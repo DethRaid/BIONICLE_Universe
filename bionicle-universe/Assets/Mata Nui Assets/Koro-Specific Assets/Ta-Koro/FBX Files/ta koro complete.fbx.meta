@@ -1,7 +1,192 @@
 fileFormatVersion: 2
 guid: a15e530fd1df7418097a735c81f58b8d
 ModelImporter:
+  serializedVersion: 15
   fileIDToRecycleName:
+    100000: Point_024
+    100002: Point_002
+    100004: Point_001
+    100006: Plane_012
+    100008: Plane
+    100010: Cylinder_000
+    100012: Cone
+    100014: Sphere_001
+    100016: Plane_001
+    100018: Cube
+    100020: Cube_012
+    100022: Cube_011
+    100024: Cube_010
+    100026: Cube_009
+    100028: Cube_008
+    100030: Cube_007
+    100032: Spot
+    100034: Point_027
+    100036: //RootNode
+    100038: Plane_003
+    100040: Plane_002
+    100042: Cone_001
+    100044: Point_022
+    100046: Sun
+    100048: Point_026
+    100050: Point_021
+    100052: Point_020
+    100054: Point_019
+    100056: Point_018
+    100058: Point_017
+    100060: Point_016
+    100062: Point_015
+    100064: Point_014
+    100066: Point_013
+    100068: Point_012
+    100070: Point_011
+    100072: Point_010
+    100074: Point_009
+    100076: Point_008
+    100078: Point_007
+    100080: Point_006
+    100082: Point_005
+    100084: Point_004
+    100086: Point_003
+    100088: Camera
+    100090: Point
+    100092: Point_023
+    100094: Cube_006
+    100096: Cube_005
+    100098: Cube_004
+    100100: Cube_003
+    100102: Cube_002
+    100104: Cube_001
+    100106: Plane_011
+    100108: Plane_010
+    100110: Plane_009
+    100112: Plane_008
+    100114: Plane_007
+    100116: Plane_006
+    100118: Plane_005
+    100120: Plane_004
+    100122: Point_025
+    400000: Point_024
+    400002: Point_002
+    400004: Point_001
+    400006: Plane_012
+    400008: Plane
+    400010: Cylinder_000
+    400012: Cone
+    400014: Sphere_001
+    400016: Plane_001
+    400018: Cube
+    400020: Cube_012
+    400022: Cube_011
+    400024: Cube_010
+    400026: Cube_009
+    400028: Cube_008
+    400030: Cube_007
+    400032: Spot
+    400034: Point_027
+    400036: //RootNode
+    400038: Plane_003
+    400040: Plane_002
+    400042: Cone_001
+    400044: Point_022
+    400046: Sun
+    400048: Point_026
+    400050: Point_021
+    400052: Point_020
+    400054: Point_019
+    400056: Point_018
+    400058: Point_017
+    400060: Point_016
+    400062: Point_015
+    400064: Point_014
+    400066: Point_013
+    400068: Point_012
+    400070: Point_011
+    400072: Point_010
+    400074: Point_009
+    400076: Point_008
+    400078: Point_007
+    400080: Point_006
+    400082: Point_005
+    400084: Point_004
+    400086: Point_003
+    400088: Camera
+    400090: Point
+    400092: Point_023
+    400094: Cube_006
+    400096: Cube_005
+    400098: Cube_004
+    400100: Cube_003
+    400102: Cube_002
+    400104: Cube_001
+    400106: Plane_011
+    400108: Plane_010
+    400110: Plane_009
+    400112: Plane_008
+    400114: Plane_007
+    400116: Plane_006
+    400118: Plane_005
+    400120: Plane_004
+    400122: Point_025
+    2300000: Plane_012
+    2300002: Plane
+    2300004: Cylinder_000
+    2300006: Cone
+    2300008: Sphere_001
+    2300010: Plane_001
+    2300012: Cube
+    2300014: Cube_012
+    2300016: Cube_011
+    2300018: Cube_010
+    2300020: Cube_009
+    2300022: Cube_008
+    2300024: Cube_007
+    2300026: Plane_003
+    2300028: Plane_002
+    2300030: Cone_001
+    2300032: Cube_006
+    2300034: Cube_005
+    2300036: Cube_004
+    2300038: Cube_003
+    2300040: Cube_002
+    2300042: Cube_001
+    2300044: Plane_011
+    2300046: Plane_010
+    2300048: Plane_009
+    2300050: Plane_008
+    2300052: Plane_007
+    2300054: Plane_006
+    2300056: Plane_005
+    2300058: Plane_004
+    3300000: Plane_012
+    3300002: Plane
+    3300004: Cylinder_000
+    3300006: Cone
+    3300008: Sphere_001
+    3300010: Plane_001
+    3300012: Cube
+    3300014: Cube_012
+    3300016: Cube_011
+    3300018: Cube_010
+    3300020: Cube_009
+    3300022: Cube_008
+    3300024: Cube_007
+    3300026: Plane_003
+    3300028: Plane_002
+    3300030: Cone_001
+    3300032: Cube_006
+    3300034: Cube_005
+    3300036: Cube_004
+    3300038: Cube_003
+    3300040: Cube_002
+    3300042: Cube_001
+    3300044: Plane_011
+    3300046: Plane_010
+    3300048: Plane_009
+    3300050: Plane_008
+    3300052: Plane_007
+    3300054: Plane_006
+    3300056: Plane_005
+    3300058: Plane_004
     4300000: Cone_001
     4300002: Plane_002
     4300004: Plane_003
@@ -32,31 +217,35 @@ ModelImporter:
     4300054: Cylinder_000
     4300056: Plane
     4300058: Plane_012
-    7400000: Default Take //// ta koro complete
-  serializedVersion: 10
+    7400000: Default Take
+    11100000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
   animations:
-    generateAnimations: 3
+    legacyGenerateAnimations: 3
     bakeSimulation: 0
-    splitAnimations: 1
+    optimizeGameObjects: 0
     animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
     animationWrapMode: 0
+    extraExposedTransformPaths: []
     clipAnimations: []
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .00999999978
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
+    importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMesh: 0
+    optimizeMeshForGPU: 1
+    weldVertices: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -66,621 +255,19 @@ ModelImporter:
     splitTangentsAcrossUV: 1
     normalImportMode: 0
     tangentImportMode: 1
-  textMetaNamesToFileIDs:
-    //RootNode:
-      data:
-        first: 1
-        second: c4860100
-      data:
-        first: 4
-        second: a41a0600
-      data:
-        first: 111
-        second: 605fa900
-    Camera:
-      data:
-        first: 1
-        second: f8860100
-      data:
-        first: 4
-        second: d81a0600
-    Cone:
-      data:
-        first: 1
-        second: ac860100
-      data:
-        first: 4
-        second: 8c1a0600
-      data:
-        first: 23
-        second: 66182300
-      data:
-        first: 33
-        second: a65a3200
-    Cone_001:
-      data:
-        first: 1
-        second: ca860100
-      data:
-        first: 4
-        second: aa1a0600
-      data:
-        first: 23
-        second: 7e182300
-      data:
-        first: 33
-        second: be5a3200
-    Cube:
-      data:
-        first: 1
-        second: b2860100
-      data:
-        first: 4
-        second: 921a0600
-      data:
-        first: 23
-        second: 6c182300
-      data:
-        first: 33
-        second: ac5a3200
-    Cube_001:
-      data:
-        first: 1
-        second: 08870100
-      data:
-        first: 4
-        second: e81a0600
-      data:
-        first: 23
-        second: 8a182300
-      data:
-        first: 33
-        second: ca5a3200
-    Cube_002:
-      data:
-        first: 1
-        second: 06870100
-      data:
-        first: 4
-        second: e61a0600
-      data:
-        first: 23
-        second: 88182300
-      data:
-        first: 33
-        second: c85a3200
-    Cube_003:
-      data:
-        first: 1
-        second: 04870100
-      data:
-        first: 4
-        second: e41a0600
-      data:
-        first: 23
-        second: 86182300
-      data:
-        first: 33
-        second: c65a3200
-    Cube_004:
-      data:
-        first: 1
-        second: 02870100
-      data:
-        first: 4
-        second: e21a0600
-      data:
-        first: 23
-        second: 84182300
-      data:
-        first: 33
-        second: c45a3200
-    Cube_005:
-      data:
-        first: 1
-        second: 00870100
-      data:
-        first: 4
-        second: e01a0600
-      data:
-        first: 23
-        second: 82182300
-      data:
-        first: 33
-        second: c25a3200
-    Cube_006:
-      data:
-        first: 1
-        second: fe860100
-      data:
-        first: 4
-        second: de1a0600
-      data:
-        first: 23
-        second: 80182300
-      data:
-        first: 33
-        second: c05a3200
-    Cube_007:
-      data:
-        first: 1
-        second: be860100
-      data:
-        first: 4
-        second: 9e1a0600
-      data:
-        first: 23
-        second: 78182300
-      data:
-        first: 33
-        second: b85a3200
-    Cube_008:
-      data:
-        first: 1
-        second: bc860100
-      data:
-        first: 4
-        second: 9c1a0600
-      data:
-        first: 23
-        second: 76182300
-      data:
-        first: 33
-        second: b65a3200
-    Cube_009:
-      data:
-        first: 1
-        second: ba860100
-      data:
-        first: 4
-        second: 9a1a0600
-      data:
-        first: 23
-        second: 74182300
-      data:
-        first: 33
-        second: b45a3200
-    Cube_010:
-      data:
-        first: 1
-        second: b8860100
-      data:
-        first: 4
-        second: 981a0600
-      data:
-        first: 23
-        second: 72182300
-      data:
-        first: 33
-        second: b25a3200
-    Cube_011:
-      data:
-        first: 1
-        second: b6860100
-      data:
-        first: 4
-        second: 961a0600
-      data:
-        first: 23
-        second: 70182300
-      data:
-        first: 33
-        second: b05a3200
-    Cube_012:
-      data:
-        first: 1
-        second: b4860100
-      data:
-        first: 4
-        second: 941a0600
-      data:
-        first: 23
-        second: 6e182300
-      data:
-        first: 33
-        second: ae5a3200
-    Cylinder_000:
-      data:
-        first: 1
-        second: aa860100
-      data:
-        first: 4
-        second: 8a1a0600
-      data:
-        first: 23
-        second: 64182300
-      data:
-        first: 33
-        second: a45a3200
-    Plane:
-      data:
-        first: 1
-        second: a8860100
-      data:
-        first: 4
-        second: 881a0600
-      data:
-        first: 23
-        second: 62182300
-      data:
-        first: 33
-        second: a25a3200
-    Plane_001:
-      data:
-        first: 1
-        second: b0860100
-      data:
-        first: 4
-        second: 901a0600
-      data:
-        first: 23
-        second: 6a182300
-      data:
-        first: 33
-        second: aa5a3200
-    Plane_002:
-      data:
-        first: 1
-        second: c8860100
-      data:
-        first: 4
-        second: a81a0600
-      data:
-        first: 23
-        second: 7c182300
-      data:
-        first: 33
-        second: bc5a3200
-    Plane_003:
-      data:
-        first: 1
-        second: c6860100
-      data:
-        first: 4
-        second: a61a0600
-      data:
-        first: 23
-        second: 7a182300
-      data:
-        first: 33
-        second: ba5a3200
-    Plane_004:
-      data:
-        first: 1
-        second: 18870100
-      data:
-        first: 4
-        second: f81a0600
-      data:
-        first: 23
-        second: 9a182300
-      data:
-        first: 33
-        second: da5a3200
-    Plane_005:
-      data:
-        first: 1
-        second: 16870100
-      data:
-        first: 4
-        second: f61a0600
-      data:
-        first: 23
-        second: 98182300
-      data:
-        first: 33
-        second: d85a3200
-    Plane_006:
-      data:
-        first: 1
-        second: 14870100
-      data:
-        first: 4
-        second: f41a0600
-      data:
-        first: 23
-        second: 96182300
-      data:
-        first: 33
-        second: d65a3200
-    Plane_007:
-      data:
-        first: 1
-        second: 12870100
-      data:
-        first: 4
-        second: f21a0600
-      data:
-        first: 23
-        second: 94182300
-      data:
-        first: 33
-        second: d45a3200
-    Plane_008:
-      data:
-        first: 1
-        second: 10870100
-      data:
-        first: 4
-        second: f01a0600
-      data:
-        first: 23
-        second: 92182300
-      data:
-        first: 33
-        second: d25a3200
-    Plane_009:
-      data:
-        first: 1
-        second: 0e870100
-      data:
-        first: 4
-        second: ee1a0600
-      data:
-        first: 23
-        second: 90182300
-      data:
-        first: 33
-        second: d05a3200
-    Plane_010:
-      data:
-        first: 1
-        second: 0c870100
-      data:
-        first: 4
-        second: ec1a0600
-      data:
-        first: 23
-        second: 8e182300
-      data:
-        first: 33
-        second: ce5a3200
-    Plane_011:
-      data:
-        first: 1
-        second: 0a870100
-      data:
-        first: 4
-        second: ea1a0600
-      data:
-        first: 23
-        second: 8c182300
-      data:
-        first: 33
-        second: cc5a3200
-    Plane_012:
-      data:
-        first: 1
-        second: a6860100
-      data:
-        first: 4
-        second: 861a0600
-      data:
-        first: 23
-        second: 60182300
-      data:
-        first: 33
-        second: a05a3200
-    Point:
-      data:
-        first: 1
-        second: fa860100
-      data:
-        first: 4
-        second: da1a0600
-    Point_001:
-      data:
-        first: 1
-        second: a4860100
-      data:
-        first: 4
-        second: 841a0600
-    Point_002:
-      data:
-        first: 1
-        second: a2860100
-      data:
-        first: 4
-        second: 821a0600
-    Point_003:
-      data:
-        first: 1
-        second: f6860100
-      data:
-        first: 4
-        second: d61a0600
-    Point_004:
-      data:
-        first: 1
-        second: f4860100
-      data:
-        first: 4
-        second: d41a0600
-    Point_005:
-      data:
-        first: 1
-        second: f2860100
-      data:
-        first: 4
-        second: d21a0600
-    Point_006:
-      data:
-        first: 1
-        second: f0860100
-      data:
-        first: 4
-        second: d01a0600
-    Point_007:
-      data:
-        first: 1
-        second: ee860100
-      data:
-        first: 4
-        second: ce1a0600
-    Point_008:
-      data:
-        first: 1
-        second: ec860100
-      data:
-        first: 4
-        second: cc1a0600
-    Point_009:
-      data:
-        first: 1
-        second: ea860100
-      data:
-        first: 4
-        second: ca1a0600
-    Point_010:
-      data:
-        first: 1
-        second: e8860100
-      data:
-        first: 4
-        second: c81a0600
-    Point_011:
-      data:
-        first: 1
-        second: e6860100
-      data:
-        first: 4
-        second: c61a0600
-    Point_012:
-      data:
-        first: 1
-        second: e4860100
-      data:
-        first: 4
-        second: c41a0600
-    Point_013:
-      data:
-        first: 1
-        second: e2860100
-      data:
-        first: 4
-        second: c21a0600
-    Point_014:
-      data:
-        first: 1
-        second: e0860100
-      data:
-        first: 4
-        second: c01a0600
-    Point_015:
-      data:
-        first: 1
-        second: de860100
-      data:
-        first: 4
-        second: be1a0600
-    Point_016:
-      data:
-        first: 1
-        second: dc860100
-      data:
-        first: 4
-        second: bc1a0600
-    Point_017:
-      data:
-        first: 1
-        second: da860100
-      data:
-        first: 4
-        second: ba1a0600
-    Point_018:
-      data:
-        first: 1
-        second: d8860100
-      data:
-        first: 4
-        second: b81a0600
-    Point_019:
-      data:
-        first: 1
-        second: d6860100
-      data:
-        first: 4
-        second: b61a0600
-    Point_020:
-      data:
-        first: 1
-        second: d4860100
-      data:
-        first: 4
-        second: b41a0600
-    Point_021:
-      data:
-        first: 1
-        second: d2860100
-      data:
-        first: 4
-        second: b21a0600
-    Point_022:
-      data:
-        first: 1
-        second: cc860100
-      data:
-        first: 4
-        second: ac1a0600
-    Point_023:
-      data:
-        first: 1
-        second: fc860100
-      data:
-        first: 4
-        second: dc1a0600
-    Point_024:
-      data:
-        first: 1
-        second: a0860100
-      data:
-        first: 4
-        second: 801a0600
-    Point_025:
-      data:
-        first: 1
-        second: 1a870100
-      data:
-        first: 4
-        second: fa1a0600
-    Point_026:
-      data:
-        first: 1
-        second: d0860100
-      data:
-        first: 4
-        second: b01a0600
-    Point_027:
-      data:
-        first: 1
-        second: c2860100
-      data:
-        first: 4
-        second: a21a0600
-    Sphere_001:
-      data:
-        first: 1
-        second: ae860100
-      data:
-        first: 4
-        second: 8e1a0600
-      data:
-        first: 23
-        second: 68182300
-      data:
-        first: 33
-        second: a85a3200
-    Spot:
-      data:
-        first: 1
-        second: c0860100
-      data:
-        first: 4
-        second: a01a0600
-    Sun:
-      data:
-        first: 1
-        second: ce860100
-      data:
-        first: 4
-        second: ae1a0600
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  userData: 

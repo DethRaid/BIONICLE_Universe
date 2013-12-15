@@ -64,7 +64,7 @@
      <None Include="Assets\AstarPathfindingProject\Plugins\DotNetZip\License.txt" />
      <None Include="Assets\AstarPathfindingProject\ExampleScenes\Materials\Projector Multiply.shader" />
      <None Include="Assets\Mata Nui Assets\Koro-Specific Assets\Ta-Koro\Tunnels\AddPass.shader" />
-     <None Include="Assets\Character Creation\Shaders\ShadowOnly.shader" />
+     <None Include="Assets\Mata Nui Assets\CharacterCreationAssets\Shaders\ShadowOnly.shader" />
      <None Include="Assets\Standard Assets\Skyboxes\ skybox info.txt" />
      <None Include="Assets\Misc. Stuff\StrumpyShaderEditor\Editor\Resources\Internal\Temp\TempShader.shader" />
      <None Include="Assets\Standard Assets\Water (Pro Only)\Water4\Sources\Shaders\FX-SimpleWater4.shader" />
@@ -80,10 +80,12 @@
      <None Include="Assets\Mata Nui Assets\Koro-Specific Assets\Ta-Koro\Tunnels\Bumped.shader" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\AstarPathfindingProject\ExampleScenes\Materials\Projector Light.shader" />
+     <None Include="Assets\Mata Nui Assets\Koro-Specific Assets\Po-Koro\FBX Files\Po-KoroStatue.obj.txt" />
      <None Include="Assets\AstarPathfindingProject\Readme.txt" />
      <None Include="Assets\Mata Nui Assets\Koro-Specific Assets\Ta-Koro\Tunnels\Depth Mask.shader" />
      <None Include="Assets\Standard Assets\Water (Pro Only)\Sources\Shaders\FX-Water.shader" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
+     <None Include="Assets\Mask Assets\Mask Shaders\Kaukau.shader" />
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Light.shader" />
      <None Include="Assets\AstarPathfindingProject\Plugins\JsonFx\License.txt" />
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />

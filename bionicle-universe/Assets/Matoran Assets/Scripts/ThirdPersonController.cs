@@ -1,8 +1,10 @@
-﻿#pragma strict
+﻿using UnityEngine;
+using System.Collections;
+
 // Require a character controller to be attached to the same game object
 [RequireComponent( typeof( CharacterController ) )]
 
-class ThirdpersonController {
+class ThirdpersonController : MonoBehaviour {
 	public GameObject swimming;
 	public bool canWalk = true;
 
@@ -21,34 +23,34 @@ class ThirdpersonController {
 	private State _characterState;
 
 	// The speed when walking
-	public float walkSpeed = 2.0;
+	public float walkSpeed = 2.0f;
 	// when pressing "Fire3" button (cmd) we start running
-	public float runSpeed = 6.0;
-	public float bouyancy = 0.01;
+	public float runSpeed = 6.0f;
+	public float bouyancy = 0.01f;
 	public Transform water;
 	public ParticleSystem swimmingParticles;
-	public float inAirControlAcceleration = 3.0;
+	public float inAirControlAcceleration = 3.0f;
 	// How high do we jump when pressing jump and letting go immediately
-	public float jumpHeight = 0.5;
+	public float jumpHeight = 0.5f;
 	// The gravity for the character
-	public float gravity = 20.0;
+	public float gravity = 20.0f;
 	// The gravity in controlled descent mode
-	public float speedSmoothing = 10.0;
-	public float rotateSpeed = 500.0;
-	public float canJump = true;
-	public float underwater = false;
+	public float speedSmoothing = 10.0f;
+	public float rotateSpeed = 500.0f;
+	public bool canJump = true;
+	public bool underwater = false;
 
-	private float jumpRepeatTime = 0.5;
-	private float jumpTimeout = 0.15;
-	private float groundedTimeout = 0.25;
+	private float jumpRepeatTime = 0.5f;
+	private float jumpTimeout = 0.15f;
+	private float groundedTimeout = 0.25f;
 	// The camera doesnt start following the target immediately but waits for a split second to avoid too much waving around.
-	private float lockCameraTimer = 0.0;
+	private float lockCameraTimer = 0.0f;
 	// The current move direction in x-z
-	private var moveDirection = Vector3.zero;
+	private Vector3 moveDirection = Vector3.zero;
 	// The current vertical speed
-	private float verticalSpeed = 0.0;
+	private float verticalSpeed = 0.0f;
 	// The current x-z move speed
-	private float moveSpeed = 0.0;
+	private float moveSpeed = 0.0f;
 	// The last collision flags returned from controller.Move
 	private CollisionFlags collisionFlags; 
 	// Are we jumping? (Initiated with jump button and not grounded yet)
@@ -59,15 +61,15 @@ class ThirdpersonController {
 	// Is the user pressing any keys?
 	private bool isMoving = false;
 	// When did the user start walking (Used for going into trot after a while)
-	private float walkTimeStart = 0.0;
+	private float walkTimeStart = 0.0f;
 	// Last time the jump button was clicked down
-	private float lastJumpButtonTime = -10.0;
+	private float lastJumpButtonTime = -10.0f;
 	// Last time we performed a jump
-	private float lastJumpTime = -1.0;
+	private float lastJumpTime = -1.0f;
 	// the height we jumped from (Used to determine for how long to apply extra jump power after jumping.)
-	private float lastJumpStartHeight = 0.0;
+	private float lastJumpStartHeight = 0.0f;
 	private Vector3 inAirVelocity = Vector3.zero;
-	private float lastGroundedTime = 0.0;
+	private float lastGroundedTime = 0.0f;
 	public bool isControllable = true;
 
 	private Vector3 movement;
@@ -98,18 +100,18 @@ class ThirdpersonController {
 		}
 		forward = forward.normalized;
 		
-		var right = Vector3(forward.z, 0, -forward.x);
+		Vector3 right = new Vector3(forward.z, 0, -forward.x);
 		
 		var v = Input.GetAxisRaw("Vertical");
 		var h = Input.GetAxisRaw("Horizontal");
 		
-		if( v < -0.2 ) {
+		if( v < -0.2f ) {
 			movingBack = true;
 		} else {
 			movingBack = false;
 		}
 		bool wasMoving = isMoving;
-		isMoving = Mathf.Abs( h ) > 0.1 || Mathf.Abs( v ) > 0.1;
+		isMoving = Mathf.Abs( h ) > 0.1f || Mathf.Abs( v ) > 0.1f;
 		// Target direction relative to the camera
 		Vector3 targetDirection = h * right + v * forward;
 		// Grounded controls
@@ -117,11 +119,11 @@ class ThirdpersonController {
 			// Lock camera for short period when transitioning moving & standing still
 			lockCameraTimer += Time.deltaTime;
 			if( isMoving != wasMoving ) {
-				lockCameraTimer = 0.0;
+				lockCameraTimer = 0.0f;
 			}
 			if( targetDirection != Vector3.zero ) {
 				// If we are really slow, just snap to the target direction
-				if( moveSpeed < walkSpeed * 0.5 && grounded ) {
+				if( moveSpeed < walkSpeed * 0.5f && grounded ) {
 					moveDirection = targetDirection.normalized;
 				// Otherwise smoothly turn towards it
 				} else {
@@ -130,7 +132,7 @@ class ThirdpersonController {
 				}
 			}
 			float curSmooth = speedSmoothing * Time.deltaTime;
-			float targetSpeed = Mathf.Min( targetDirection.magnitude, 1.0 );
+			float targetSpeed = Mathf.Min( targetDirection.magnitude, 1.0f );
 			_characterState = State.Idle;
 			if( Input.GetKey( KeyCode.LeftShift ) || Input.GetKey( KeyCode.RightShift ) ) {
 				targetSpeed *= runSpeed;
@@ -140,13 +142,13 @@ class ThirdpersonController {
 				_characterState = State.Walking;
 			}
 			moveSpeed = Mathf.Lerp( moveSpeed, targetSpeed, curSmooth );
-			if( moveSpeed < walkSpeed * 0.3 ) {
+			if( moveSpeed < walkSpeed * 0.3f ) {
 				walkTimeStart = Time.time;
 			}
 		} else if( underwater ) {
 			lockCameraTimer += Time.deltaTime;
 			if( isMoving != wasMoving ) {
-				lockCameraTimer = 0.0;
+				lockCameraTimer = 0.0f;
 			}
 			moveDirection = Vector3.RotateTowards( moveDirection, targetDirection, rotateSpeed * Mathf.Deg2Rad * Time.deltaTime, 1000 );
 			moveDirection = moveDirection.normalized;
@@ -163,13 +165,13 @@ class ThirdpersonController {
 			moveSpeed = Mathf.Lerp( moveSpeed, wantedSpeed, curSmuth );
 		} else {
 			if( jumping ) {
-				lockCameraTimer = 0.0;
+				lockCameraTimer = 0.0f;
 			}
 			if( isMoving ) {
 				inAirVelocity += targetDirection.normalized * Time.deltaTime * inAirControlAcceleration;
 			}
 		}		
-		animator.SetValue( "speed", moveSpeed );
+		//animator.SetValue( "speed", moveSpeed );
 	}
 
 	public void ApplyJumping() {
@@ -193,12 +195,12 @@ class ThirdpersonController {
 			// Apply gravity
 			var jumpButton = Input.GetButton( "Jump" );
 			// When we reach the apex of the jump we send out a message
-			if( jumping && !jumpingReachedApex && verticalSpeed <= 0.0 ) {
+			if( jumping && !jumpingReachedApex && verticalSpeed <= 0.0f ) {
 				jumpingReachedApex = true;
 				SendMessage( "DidJumpReachApex", SendMessageOptions.DontRequireReceiver) ;
 			}
 			if( IsGrounded () ) {
-				verticalSpeed = 0.0;
+				verticalSpeed = 0.0f;
 			} else {
 				verticalSpeed -= gravity * Time.deltaTime;
 			}			
@@ -233,15 +235,15 @@ class ThirdpersonController {
 		if( Input.GetButtonDown("Jump") && canJump ) {
 			lastJumpButtonTime = Time.time;
 		}
-		UpdateSmoothedMovementDirection();
+		updateSmoothedMovementDirection();
 		if( !underwater ) {
 			ApplyGravity();
 			ApplyJumping();
 		}
 		if( !underwater ) {
-			movement = moveDirection * moveSpeed + Vector3( 0, verticalSpeed, 0 ) + inAirVelocity;
+			movement = moveDirection * moveSpeed + new Vector3( 0, verticalSpeed, 0 ) + inAirVelocity;
 		} else {
-			movement = moveDirection * moveSpeed + Vector3( 0, bouyancy, 0 );
+			movement = moveDirection * moveSpeed + new Vector3( 0, bouyancy, 0 );
 		}
 		movement *= Time.deltaTime;
 		collisionFlags = controller.Move( movement );
@@ -274,59 +276,59 @@ class ThirdpersonController {
 				transform.rotation = Quaternion.LookRotation( moveDirection );
 	}
 
-	function OnControllerColliderHit( hit : ControllerColliderHit )
+	void OnControllerColliderHit( ControllerColliderHit hit )
 	{
 		//	Debug.DrawRay(hit.point, hit.normal);
 		if( hit.moveDirection.y > 0.01 ) 
 			return;
 	}
 
-	function GetSpeed () 
+	float GetSpeed () 
 	{
 		return moveSpeed;
 	}
 
-	function IsJumping () 
+	bool IsJumping () 
 	{
 		return jumping;
 	}
 
-	function IsGrounded () 
+	bool IsGrounded () 
 	{
 		return( collisionFlags & CollisionFlags.CollidedBelow ) != 0;
 	}
 
-	function GetDirection () 
+	Vector3 GetDirection () 
 	{
 		return moveDirection;
 	}
 
-	function IsMovingBackwards () 
+	bool IsMovingBackwards () 
 	{
 		return movingBack;
 	}
 
-	function GetLockCameraTimer () 
+	float GetLockCameraTimer () 
 	{
 		return lockCameraTimer;
 	}
 
-	function IsMoving ()  : boolean
+	bool IsMoving ()
 	{
 		return Mathf.Abs(Input.GetAxisRaw("Vertical")) + Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0.5;
 	}
 
-	function HasJumpReachedApex ()
+	bool HasJumpReachedApex ()
 	{
 		return jumpingReachedApex;
 	}
 
-	function IsGroundedWithTimeout ()
+	bool IsGroundedWithTimeout ()
 	{
 		return lastGroundedTime + groundedTimeout > Time.time;
 	}
 
-	function Reset ()
+	void Reset ()
 	{
 		gameObject.tag = "Player";
 	}
