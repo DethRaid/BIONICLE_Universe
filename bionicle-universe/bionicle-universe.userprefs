@@ -1,11 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Mata Nui Assets\CharacterCreationAssets\Scripts\CharacterCreator.cs">
     <Files>
-      <File FileName="Assets\Mata Nui Assets\CharacterCreationAssets\Scripts\CharacterCreator.cs" Line="127" Column="40" />
+      <File FileName="Assets\Mata Nui Assets\CharacterCreationAssets\Scripts\CharacterCreator.cs" Line="125" Column="39" />
+      <File FileName="Assets\Mata Nui Assets\CharacterCreationAssets\Scripts\CharacterCreator.cs" Line="125" Column="39" />
       <File FileName="Assets\Standard Assets\Water (Pro Only)\Sources\Scripts\Water.cs" Line="1" Column="1" />
       <File FileName="Assets\Matoran Assets\Scripts\ThirdPersonController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Mask Assets\Mask Shaders\Kaukau.shader" Line="22" Column="25" />
+      <File FileName="Assets\Mask Assets\Mask Shaders\Kaukau.shader" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
