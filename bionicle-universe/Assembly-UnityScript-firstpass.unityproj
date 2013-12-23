@@ -62,7 +62,7 @@
      <None Include="Assets\AstarPathfindingProject\Plugins\DotNetZip\License.txt" />
      <None Include="Assets\AstarPathfindingProject\ExampleScenes\Materials\Projector Multiply.shader" />
      <None Include="Assets\Mata Nui Assets\Koro-Specific Assets\Ta-Koro\Tunnels\AddPass.shader" />
-     <None Include="Assets\Mata Nui Assets\CharacterCreationAssets\Shaders\ShadowOnly.shader" />
+     <None Include="Assets\Character Creation\Shaders\ShadowOnly.shader" />
      <None Include="Assets\Standard Assets\Skyboxes\ skybox info.txt" />
      <None Include="Assets\Misc. Stuff\StrumpyShaderEditor\Editor\Resources\Internal\Temp\TempShader.shader" />
      <None Include="Assets\Standard Assets\Water (Pro Only)\Water4\Sources\Shaders\FX-SimpleWater4.shader" />

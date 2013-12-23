@@ -1,0 +1,135 @@
+-debug
+-target:library
+-nowarn:0169
+-out:Temp/Assembly-CSharp.dll
+-r:"C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll"
+-r:Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll
+-r:Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll
+-r:Assets/AstarPathfindingProject/Plugins/DotNetZip/Ionic.Zip.Reduced.dll
+-r:Assets/AstarPathfindingProject/Plugins/JsonFx/JsonFx.Json.dll
+-r:Assets/RAIN/RAINIndie.dll
+-r:Assets/RAIN/Recast.dll
+-r:"C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll"
+-define:UNITY_STANDALONE_WIN
+-define:ENABLE_MICROPHONE
+-define:ENABLE_TEXTUREID_MAP
+-define:ENABLE_AUDIO_FMOD
+-define:UNITY_STANDALONE
+-define:ENABLE_MONO
+-define:ENABLE_SPRITES
+-define:ENABLE_TERRAIN
+-define:ENABLE_GENERICS
+-define:ENABLE_SUBSTANCE
+-define:INCLUDE_WP8SUPPORT
+-define:ENABLE_MOVIES
+-define:ENABLE_WWW
+-define:ENABLE_IMAGEEFFECTS
+-define:ENABLE_WEBCAM
+-define:INCLUDE_METROSUPPORT
+-define:RENDER_SOFTWARE_CURSOR
+-define:ENABLE_NETWORK
+-define:ENABLE_PHYSICS
+-define:ENABLE_CACHING
+-define:ENABLE_CLOTH
+-define:ENABLE_2D_PHYSICS
+-define:ENABLE_SHADOWS
+-define:ENABLE_AUDIO
+-define:ENABLE_NAVMESH_CARVING
+-define:ENABLE_DUCK_TYPING
+-define:ENABLE_SINGLE_INSTANCE_BUILD_SETTING
+-define:UNITY_4_3_0
+-define:UNITY_4_3
+-define:ENABLE_PROFILER
+-define:UNITY_EDITOR
+-define:UNITY_EDITOR_WIN
+Assets/AstarPathfindingProject/Core/AI/AIPath.cs
+Assets/AstarPathfindingProject/Core/AI/NavmeshController.cs
+Assets/AstarPathfindingProject/Core/AI/Seeker.cs
+Assets/AstarPathfindingProject/Core/AstarData.cs
+Assets/AstarPathfindingProject/Core/AstarMath.cs
+Assets/AstarPathfindingProject/Core/AstarPath.cs
+Assets/AstarPathfindingProject/Core/GraphUpdateScene.cs
+Assets/AstarPathfindingProject/Core/GraphUpdateShape.cs
+Assets/AstarPathfindingProject/Core/Misc/AstarDebugger.cs
+Assets/AstarPathfindingProject/Core/Misc/BinaryHeap.cs
+Assets/AstarPathfindingProject/Core/Misc/GraphEditorBase.cs
+Assets/AstarPathfindingProject/Core/Misc/GraphModifier.cs
+Assets/AstarPathfindingProject/Core/Misc/Int3.cs
+Assets/AstarPathfindingProject/Core/Misc/ListPool.cs
+Assets/AstarPathfindingProject/Core/Misc/PathPool.cs
+Assets/AstarPathfindingProject/Core/Misc/StackPool.cs
+Assets/AstarPathfindingProject/Core/MultithreadClasses.cs
+Assets/AstarPathfindingProject/Core/Node.cs
+Assets/AstarPathfindingProject/Core/NodeLink.cs
+Assets/AstarPathfindingProject/Core/Path.cs
+Assets/AstarPathfindingProject/Core/Serialization/GraphLoaderHistory/AstarSerialize.cs
+Assets/AstarPathfindingProject/Core/Serialization/GraphLoaderHistory/AstarSerializer3_01.cs
+Assets/AstarPathfindingProject/Core/Serialization/GraphLoaderHistory/AstarSerializer3_04.cs
+Assets/AstarPathfindingProject/Core/Serialization/GraphLoaderHistory/AstarSerializer3_05.cs
+Assets/AstarPathfindingProject/Core/Serialization/GraphLoaderHistory/AstarSerializer3_07.cs
+Assets/AstarPathfindingProject/Core/Serialization/JsonConverters.cs
+Assets/AstarPathfindingProject/Core/Serialization/JsonSerializer.cs
+Assets/AstarPathfindingProject/Core/astarclasses.cs
+Assets/AstarPathfindingProject/ExampleScenes/ExampleScripts/AIFollow.cs
+Assets/AstarPathfindingProject/ExampleScenes/ExampleScripts/DoorController.cs
+Assets/AstarPathfindingProject/ExampleScenes/ExampleScripts/DynamicGridObstacle.cs
+Assets/AstarPathfindingProject/ExampleScenes/ExampleScripts/MineBotAI.cs
+Assets/AstarPathfindingProject/ExampleScenes/ExampleScripts/ObjectPlacer.cs
+Assets/AstarPathfindingProject/ExampleScenes/ExampleScripts/TargetMover.cs
+Assets/AstarPathfindingProject/Generators/Base.cs
+Assets/AstarPathfindingProject/Generators/GridGenerator.cs
+Assets/AstarPathfindingProject/Generators/NavMeshGenerator.cs
+Assets/AstarPathfindingProject/Generators/NodeClasses/GridNode.cs
+Assets/AstarPathfindingProject/Generators/NodeClasses/MeshNode.cs
+Assets/AstarPathfindingProject/Generators/PointGenerator.cs
+Assets/AstarPathfindingProject/Generators/Utilities/BBTree.cs
+Assets/AstarPathfindingProject/Generators/Utilities/NavMeshRenderer.cs
+Assets/AstarPathfindingProject/Generators/Utilities/ObjImporter.cs
+Assets/AstarPathfindingProject/Modifiers/AlternativePath.cs
+Assets/AstarPathfindingProject/Modifiers/FunnelModifier.cs
+Assets/AstarPathfindingProject/Modifiers/Modifiers.cs
+Assets/AstarPathfindingProject/Modifiers/RaycastModifier.cs
+Assets/AstarPathfindingProject/Modifiers/SimpleSmoothModifier.cs
+Assets/AstarPathfindingProject/Modifiers/StartEndModifier.cs
+Assets/AstarPathfindingProject/Pathfinders/ABPath.cs
+Assets/AstarPathfindingProject/Utilities/AstarChecksum.cs
+Assets/AstarPathfindingProject/Utilities/AstarMemory.cs
+Assets/AstarPathfindingProject/Utilities/AstarParallel.cs
+Assets/AstarPathfindingProject/Utilities/AstarProfiler.cs
+Assets/AstarPathfindingProject/Utilities/DotNetReplacements.cs
+Assets/AstarPathfindingProject/Utilities/GraphUpdateUtilities.cs
+Assets/AstarPathfindingProject/Utilities/LockFreeStack.cs
+Assets/AstarPathfindingProject/Utilities/PathUtilities.cs
+Assets/AstarPathfindingProject/Utilities/SizeProfiler.cs
+Assets/AstarPathfindingProject/Utilities/UnityReferenceHelper.cs
+Assets/AstarPathfindingProject/changelog.cs
+"Assets/Base Scripts/WowCamera.cs"
+Assets/CharacterCreationAssets/Scripts/CharacterCreator.cs
+"Assets/GUI stuff/Scripts/MainGUI.cs"
+Assets/JotunNavmesh/Scripts/JNavLevelScanner.cs
+"Assets/Mata Nui Assets/Scripts/Boat.cs"
+"Assets/Mata Nui Assets/Scripts/DayCycle.cs"
+"Assets/Mata Nui Assets/Scripts/Tides.cs"
+"Assets/Matoran Assets/Scripts/AIMover.cs"
+"Assets/Matoran Assets/Scripts/Player.cs"
+"Assets/Matoran Assets/Scripts/ShasaAI.cs"
+"Assets/Matoran Assets/Scripts/SpeechReader.cs"
+"Assets/Matoran Assets/Scripts/ThirdPersonController.cs"
+"Assets/Metaball stuff/MCBlob.cs"
+"Assets/Misc. Stuff/Locomotion System/AlignmentTracker.cs"
+"Assets/Misc. Stuff/Locomotion System/GhostOriginal.cs"
+"Assets/Misc. Stuff/Locomotion System/HeadLookController.cs"
+"Assets/Misc. Stuff/Locomotion System/IK1JointAnalytic.cs"
+"Assets/Misc. Stuff/Locomotion System/IKSimple.cs"
+"Assets/Misc. Stuff/Locomotion System/IKSolver.cs"
+"Assets/Misc. Stuff/Locomotion System/IMotionAnalyzer.cs"
+"Assets/Misc. Stuff/Locomotion System/Interpolator.cs"
+"Assets/Misc. Stuff/Locomotion System/LegAnimator.cs"
+"Assets/Misc. Stuff/Locomotion System/LegController.cs"
+"Assets/Misc. Stuff/Locomotion System/MotionAnalyzer.cs"
+"Assets/Misc. Stuff/Locomotion System/MotionAnalyzerBackwards.cs"
+"Assets/Misc. Stuff/Locomotion System/PolarGradientBandInterpolator.cs"
+"Assets/Misc. Stuff/Locomotion System/TrajectoryVisualizer.cs"
+"Assets/Misc. Stuff/Locomotion System/Util.cs"
+-r:"C:/Program Files (x86)/Unity/Editor/Data/Mono\lib/mono/unity\System.Runtime.Serialization.dll"
+-r:"C:/Program Files (x86)/Unity/Editor/Data/Mono\lib/mono/unity\System.Xml.Linq.dll"

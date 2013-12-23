@@ -50,6 +50,51 @@ public class CharacterCreator : MonoBehaviour
 		+" creatures of the Air, but has little trouble withstanding attacks"
 		+" of Water."
 	};
+	public string[] maskDescriptions = {
+		"Hau - Mask of Shileding\nWhen active, the Hau gives its wearer a protective shield",	//Implement this with a simple variable on the player's hitpoints script. Damage reduction proportional to Mask Use skill
+		"Kaukau - Mask of Water-Breathing\nWhen active, the Kaukau lets its wearer breathe underwater",	//Underwater loot, anybody?	Time can breathe proportional to Mask Use skill
+		"Miru - Mask of Levitation\nWhen active, the Miru lets its wearer hover above thr ground, granting bonuses to evasion",	//Yes, actually levitate. Plus, a chance to deal no damage based on Mask Use skill
+		"Akaku - Mask of X-Ray Vision\nWhen actve, the user can detect protodermic life forms through visul obstructions",	//Protodermic because protodermis blocks x-rays, just like bones. Krana and Kraata are invisible here. Distance seeable is proportional to Mask use skill. Zoom is also a thign, accomplished by decreased FOV
+		"Pakari - Mask of Strength\nWhen active, the wearer's strength is greately increased",	//Pretty simple. Strenght increased proportional to Mask Use skill
+		"Kakama - Mask of Speed\nWhen active, the wearer is harder to hit and can travel nearly a hundred miles in a few seconds",	//See what I did there? I just justified fast travel. Regular movement speed and chance for no damage are proportional to Mask Use
+		"Huna - Mask of Invisibility\nWhen active, the player is completely invisible, although sound is not muted",	//time invisible is proportinoal to Mask Use skill
+		"Rau - Mask of Translation\nNo clue how this will effecti gameplay at all",	//HALP
+		"Mahiki - Mask of Illusion\nWhen active, the wearer can disguise themself as any object in their vision",	//Obviously the stealth option. The illusion lasts longer with a higher Mask Use skill (Mask Use is important, no?). this.renderer.mesh = raycasthit.renderer.mesh
+		"Matatu - Mask of Telekenesis\nWhen active, the wearer can telekenetically control any object in their vision",	//Heavier things require more Mask Use skill points to have been allocated
+		"Ruru - Mask of Night Vision\nWhen active, the Ruru lets its user see in dark areas",	//We can have a light attached to this mask, and make it active when the mask is active. Can you guess what makes the light brighter?
+		"Komau - Mask of Mind Control\nWhen active, the Komau lets its wearer take direct control of any being within their vision"	//The AI on a given Actor will give movement commands. We can just let those commands be given by imput. I'm not even going to tell you what allows you to take control of higher level creatures.
+	};
+	public string[] skills = {
+		//Ga-Koro
+		"Swimming (SPD)", "Fishing (SGY)", "Navigation (SPD)", "Healing (ACC)",
+		//Ta=Koro
+		"Forge Tool (STR)", "Forge Weapon (ACC)", "Forge Armor (STR)", "Lava Surfing (SPD)",
+		//Le-Koro
+		"Musicianship (CON)", "Ride Air Rahi (CON)", "Throw Disk (ACC)", "Balance (ACC)",
+		//Onu-Koro
+		"Prospecting (SGY)", "Ride Ground Rahi (CON)", "Cut Stone (STR)", "Spot (CON)",
+		//Ko-Koro
+		"Tracking (SGY)", "Prophesy (WIL)", "Survival (WIL)", "Sneaking (SGY)",
+		//Po-Koro
+		"Barter (CON)", "Carving (SGY)", "Climb (SGY)", "Animal Knowledge (CON)",
+		//General
+		"Melee Weapon (STR)", "Ranged Weapon (ACC)", "Mask Use (WIL)", "Diplomacy (CON)"
+
+	};
+	//str 5
+	//spd 3
+	//acc 4
+	//sgy 6
+	//con 7
+	//wil 3
+	public string[] statDescriptions = {
+		"Strength (STR) allows a character to influct more melee damage. It also influences a number of skills.",
+		"Speed (SPD) gives a character a chance to decrease damage taken, as well as affecting movement speed and influencing a number of skills.",
+		"Confidence (CON) gives a character a significant leg up in social interactions. It can affect things like prices of goods or one's ability to convince others of a thing.",
+		"Willpower (WIL) describes how hard one can concentrate. A high Willpower will increase one's ability to use a mask while under attack, and will allow one to take more damage before it affects them.",
+		"Strategy (SGY) lets a character formulate ays of solving problems and thus can affect literally anything. It scales exponentially and affects a number of skills.",
+		"Accuracy (ACC) is a mesaure of how careful a character can be. It affects ranged damage and a number of skills which involve the use os hands."
+	};
     public GUISkin mainSkin, koroSkin;
     public SkinnedMeshRenderer meshRenderer;
     public Material[] materials;
@@ -60,7 +105,7 @@ public class CharacterCreator : MonoBehaviour
 
 	public int element, mainColor, secondaryColor, mask, str, spd, con, wil;
 	public int pointsAllowed = 72;
-	public int srg, end;
+	public int srg, acc;
 
     public CreationPanel panel = CreationPanel.Koro;
 
@@ -93,7 +138,7 @@ public class CharacterCreator : MonoBehaviour
 
 	public void Awake() {
 		targetRotation = transform.eulerAngles;
-		str = spd = con = wil = srg = end = 1;
+		str = spd = con = wil = srg = acc = 1;
 	}
 
     public void Update() {
@@ -128,7 +173,8 @@ public class CharacterCreator : MonoBehaviour
                 panel = CreationPanel.Colors;
 				StartCoroutine( "moveBack" );
             }
-        } else if (panel == CreationPanel.Colors) {
+        } 
+		else if (panel == CreationPanel.Colors) {
             GUI.BeginGroup( new Rect(10, 50, 500, 500 ) );
 	            GUI.Box( new Rect( 0, 0, 200, 250 ), "" );
 	            GUI.Label( new Rect( 40, 10, 140, 30 ), "Choose a main color" );
@@ -150,7 +196,8 @@ public class CharacterCreator : MonoBehaviour
 			                    "Go back")) {
                 panel = CreationPanel.Koro;
 			}
-        } else if (panel == CreationPanel.Vitals) {
+        }
+		else if (panel == CreationPanel.Vitals) {
             GUI.BeginGroup(new Rect(10, 10, 200, 310));
 	            GUI.Box(new Rect(0, 0, 200, 280), "");
 	            GUI.Label(new Rect(30, 10, 140, 30), "Select a starting mask");
@@ -159,90 +206,103 @@ public class CharacterCreator : MonoBehaviour
 				masks[mask].SetActive( true );
 				masks[mask].renderer.material = materials[mainColor];
             GUI.EndGroup();
-            GUI.BeginGroup(new Rect(10, 300, 200, 300));
-	            GUI.Box(new Rect(0, 0, 200, 300), "");
+			/*
+			 * Dem stats
+			 * 
+			 * Strength (STR) - melee damage, affects some skills
+			 * Speed (SPD) - AP if we have turn-based combat, movement speed otherwise. Can reduce damage dealt. Replaces dexterity and affects skills
+			 * Accuracy (ACC) - Ranged damage, affects skills
+			 * Strategy (SGY) - Can improve all things, replaces Wisdom. Adds skill points (2xSGY). Affects skills
+			 * Confidence (CON) - Dramatically improves social interactions
+			 * Willpower (WIL) - Affects hitpoints, mask use
+			 */
+            GUI.BeginGroup(new Rect(210, 10, 200, 310));
+	            GUI.Box(new Rect(0, 0, 200, 280), "");
 	            GUI.Label(new Rect(30, 10, 140, 30), "Choose your vital stats");
+			
+				GUI.Label( new Rect( 10, 50, 180, 30 ), 
+			          "Points left: " +(pointsAllowed - (str + spd + con + wil + srg + acc)) );
 
-	            GUI.Label(new Rect(10, 50, 90, 30), "Strength:");
-				if( GUI.Button( new Rect( 100, 50, 30, 30 ), "", (GUIStyle)mainSkin.customStyles.GetValue( 2 ) ) ) {
+			GUIStyle leftArrow = (GUIStyle)mainSkin.customStyles.GetValue( 2 );
+			GUIStyle rightArrow = (GUIStyle)mainSkin.customStyles.GetValue( 3 );
+
+			GUI.Label(new Rect(10, 80, 90, 30), "Strength:");
+				if( GUI.Button( new Rect( 100, 80, 30, 30 ), "", leftArrow ) ) {
 					if( str > 1 ) {
 						str--;
 					}
 				}
-	            GUI.Label(new Rect(100, 50, 90, 30), "" + str);
-				if( GUI.Button( new Rect( 160, 50, 30, 30), "", (GUIStyle)mainSkin.customStyles.GetValue( 3 ) ) ) {
+	            GUI.Label(new Rect(100, 80, 90, 30), "" + str);
+			if( GUI.Button( new Rect( 160, 80, 30, 30), "", rightArrow ) ) {
 					if( str < 20 ) {
 						str++;
 					}
 				}
 
-	            GUI.Label(new Rect(10, 80, 90, 30), "Speed:");
-				if( GUI.Button( new Rect( 100, 80, 30, 30 ), "", (GUIStyle)mainSkin.customStyles.GetValue( 2 ) ) ) {
+	            GUI.Label(new Rect(10, 110, 90, 30), "Speed:");
+			if( GUI.Button( new Rect( 100, 110, 30, 30 ), "", leftArrow ) ) {
 					if( spd > 1 ) {
 						spd--;
 					}
 				}
-				GUI.Label(new Rect(100, 80, 90, 30), "" + spd);
-				if( GUI.Button( new Rect( 160, 80, 30, 30), "", (GUIStyle)mainSkin.customStyles.GetValue( 3 ) ) ) {
+				GUI.Label(new Rect(100, 110, 90, 30), "" + spd);
+			if( GUI.Button( new Rect( 160, 110, 30, 30), "", rightArrow ) ) {
 					if( spd < 20 ) {
 						spd++;
 					}
 				}
 
-	            GUI.Label(new Rect(10, 110, 90, 30), "Confidence:");
-				if( GUI.Button( new Rect( 100, 110, 30, 30 ), "", (GUIStyle)mainSkin.customStyles.GetValue( 2 ) ) ) {
+	            GUI.Label(new Rect(10, 140, 90, 30), "Confidence:");
+			if( GUI.Button( new Rect( 100, 140, 30, 30 ), "", leftArrow ) ) {
 					if( con > 1 ) {
 						con--;
 					}
 				}
-				GUI.Label(new Rect(100, 110, 90, 30), "" + con);
-				if( GUI.Button( new Rect( 160, 110, 30, 30), "", (GUIStyle)mainSkin.customStyles.GetValue( 3 ) ) ) {
+				GUI.Label(new Rect(100, 140, 90, 30), "" + con);
+			if( GUI.Button( new Rect( 160, 140, 30, 30), "", rightArrow ) ) {
 					if( con < 20 ) {
 						con++;
 					}
 				}
 
-	            GUI.Label(new Rect(10, 140, 90, 30), "Willpower:");
-				if( GUI.Button( new Rect( 100, 140, 30, 30 ), "", (GUIStyle)mainSkin.customStyles.GetValue( 2 ) ) ) {
+	            GUI.Label(new Rect(10, 170, 90, 30), "Willpower:");
+			if( GUI.Button( new Rect( 100, 170, 30, 30 ), "", leftArrow ) ) {
 					if( wil > 1 ) {
 						wil--;
 					}
 				}
-				GUI.Label(new Rect(100, 140, 90, 30), "" + wil);
-				if( GUI.Button( new Rect( 160, 140, 30, 30), "", (GUIStyle)mainSkin.customStyles.GetValue( 3 ) ) ) {
+				GUI.Label(new Rect(100, 170, 90, 30), "" + wil);
+			if( GUI.Button( new Rect( 160, 170, 30, 30), "", rightArrow ) ) {
 					if( wil < 20 ) {
 						wil++;
 					}
 				}
 
-	            GUI.Label(new Rect(10, 170, 90, 30), "Strategy:");
-				if( GUI.Button( new Rect( 100, 170, 30, 30 ), "", (GUIStyle)mainSkin.customStyles.GetValue( 2 ) ) ) {
+	            GUI.Label(new Rect(10, 200, 90, 30), "Strategy:");
+			if( GUI.Button( new Rect( 100, 200, 30, 30 ), "", leftArrow ) ) {
 					if( srg > 1 ) {
 						srg--;
 					}
 				}
-				GUI.Label(new Rect(100, 170, 90, 30), "" + srg);
-				if( GUI.Button( new Rect( 160, 170, 30, 30), "", (GUIStyle)mainSkin.customStyles.GetValue( 3 ) ) ) {
+				GUI.Label(new Rect(100, 200, 90, 30), "" + srg);
+			if( GUI.Button( new Rect( 160, 200, 30, 30), "", rightArrow ) ) {
 					if( srg < 20 ) {
 						srg++;
 					}
 				}
 
-	            GUI.Label(new Rect(10, 200, 90, 30), "Endurance:");
-				if( GUI.Button( new Rect( 100, 200, 30, 30 ), "", (GUIStyle)mainSkin.customStyles.GetValue( 2 ) ) ) {
-					if( end > 1 ) {
-						end--;
+	            GUI.Label(new Rect(10, 230, 90, 30), "Accuracy:");
+			if( GUI.Button( new Rect( 100, 230, 30, 30 ), "", leftArrow ) ) {
+					if( acc > 1 ) {
+						acc--;
 					}
 				}
-				GUI.Label(new Rect(100, 200, 90, 30), "" + end);
-				if( GUI.Button( new Rect( 160, 200, 30, 30), "", (GUIStyle)mainSkin.customStyles.GetValue( 3 ) ) ) {
-					if( end < 20 ) {
-						end++;
+				GUI.Label(new Rect(100, 230, 90, 30), "" + acc);
+			if( GUI.Button( new Rect( 160, 230, 30, 30), "", rightArrow ) ) {
+					if( acc < 20 ) {
+						acc++;
 					}
 				}
-
-				GUI.Label( new Rect( 10, 230, 180, 30 ), 
-			          "Points left: " +(pointsAllowed - (str + spd + con + wil + srg + end)) );
             GUI.EndGroup();
             if (GUI.Button(new Rect(10, Screen.height - 55, 256, 46), "Go back")) {
                 panel = CreationPanel.Colors;
