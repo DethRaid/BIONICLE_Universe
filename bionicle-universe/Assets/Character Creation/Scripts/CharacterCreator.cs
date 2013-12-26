@@ -81,6 +81,16 @@ public class CharacterCreator : MonoBehaviour
 		"Melee Weapon (STR)", "Ranged Weapon (ACC)", "Mask Use (WIL)", "Diplomacy (CON)"
 
 	};
+	public int[] skillValues = {
+		0, 0, 0, 0,
+		0, 0, 0, 0,
+		0, 0, 0, 0,
+		0, 0, 0, 0,
+		0, 0, 0, 0,
+		0, 0, 0, 0,
+		0, 0, 0, 0
+	};
+	private int[] skillBoosts;
 	//str 5
 	//spd 3
 	//acc 4
@@ -138,7 +148,8 @@ public class CharacterCreator : MonoBehaviour
 
 	public void Awake() {
 		targetRotation = transform.eulerAngles;
-		str = spd = con = wil = srg = acc = 1;
+		str = spd = con = wil = srg = acc = 10;
+		skillBoosts = new int[28];
 	}
 
     public void Update() {
@@ -160,6 +171,21 @@ public class CharacterCreator : MonoBehaviour
 		}
 	}
 
+	public void loadSkillBoosts( int koro ) {
+		switch( koro ) {
+		case 0:
+			skillBoosts[0] = 15;
+			skillBoosts[1] = 10;
+			skillBoosts[2] = 5;
+			skillBoosts[3] = 10;
+			skillBoosts[10] = 5;
+			skillBoosts[17] = 10;
+			skillBoosts[20] = 10;
+			skillBoosts[23] = 5;
+			break;
+		}
+	}
+
     public void OnGUI() {
 		GUI.skin = mainSkin;
 		GUI.contentColor = new Color( 19, 19, 19 );
@@ -170,6 +196,7 @@ public class CharacterCreator : MonoBehaviour
 			GUI.Box( new Rect( 10, 420, 256, 210 ), "" + koroDescriptions[element] );
             if( GUI.Button( new Rect( Screen.width-266, Screen.height-55,256, 46 ), "Continue" ) ) {
                 saveElement();
+				loadSkillBoosts( element );
                 panel = CreationPanel.Colors;
 				StartCoroutine( "moveBack" );
             }
@@ -232,7 +259,7 @@ public class CharacterCreator : MonoBehaviour
 						str--;
 					}
 				}
-	            GUI.Label(new Rect(100, 80, 90, 30), "" + str);
+	            GUI.Label(new Rect(140, 80, 90, 30), "" + str);
 			if( GUI.Button( new Rect( 160, 80, 30, 30), "", rightArrow ) ) {
 					if( str < 20 ) {
 						str++;
@@ -245,7 +272,7 @@ public class CharacterCreator : MonoBehaviour
 						spd--;
 					}
 				}
-				GUI.Label(new Rect(100, 110, 90, 30), "" + spd);
+				GUI.Label(new Rect(140, 110, 90, 30), "" + spd);
 			if( GUI.Button( new Rect( 160, 110, 30, 30), "", rightArrow ) ) {
 					if( spd < 20 ) {
 						spd++;
@@ -258,7 +285,7 @@ public class CharacterCreator : MonoBehaviour
 						con--;
 					}
 				}
-				GUI.Label(new Rect(100, 140, 90, 30), "" + con);
+				GUI.Label(new Rect(140, 140, 90, 30), "" + con);
 			if( GUI.Button( new Rect( 160, 140, 30, 30), "", rightArrow ) ) {
 					if( con < 20 ) {
 						con++;
@@ -271,7 +298,7 @@ public class CharacterCreator : MonoBehaviour
 						wil--;
 					}
 				}
-				GUI.Label(new Rect(100, 170, 90, 30), "" + wil);
+				GUI.Label(new Rect(140, 170, 90, 30), "" + wil);
 			if( GUI.Button( new Rect( 160, 170, 30, 30), "", rightArrow ) ) {
 					if( wil < 20 ) {
 						wil++;
@@ -284,7 +311,7 @@ public class CharacterCreator : MonoBehaviour
 						srg--;
 					}
 				}
-				GUI.Label(new Rect(100, 200, 90, 30), "" + srg);
+				GUI.Label(new Rect(140, 200, 90, 30), "" + srg);
 			if( GUI.Button( new Rect( 160, 200, 30, 30), "", rightArrow ) ) {
 					if( srg < 20 ) {
 						srg++;
@@ -297,13 +324,37 @@ public class CharacterCreator : MonoBehaviour
 						acc--;
 					}
 				}
-				GUI.Label(new Rect(100, 230, 90, 30), "" + acc);
+				GUI.Label(new Rect(140, 230, 90, 30), "" + acc);
 			if( GUI.Button( new Rect( 160, 230, 30, 30), "", rightArrow ) ) {
 					if( acc < 20 ) {
 						acc++;
 					}
 				}
             GUI.EndGroup();
+
+			GUI.BeginGroup( new Rect( 410, 10, 250, 620 ) );
+			GUI.Box(new Rect(0, 0, 250, 620), "");
+			GUI.Label(new Rect(60, -5, 140, 30), "Allocate Skill Points");
+			
+			GUI.Label( new Rect( 10, 20, 180, 30 ), 
+			          "Points left: " +(srg * 8) );
+			for( int i = 0; i < 28; i++ ) {
+				int pos = i*25 + 40;
+				GUI.Label( new Rect( 10, pos, 200, 30 ), skills[i] );
+				if( GUI.Button( new Rect( 170, pos, 30, 30 ), "", leftArrow ) ) {
+					if( skillValues[i] > 0 ) {
+						skillValues[i]--;
+					}
+				}
+				GUI.Label ( new Rect( 205, pos - 2, 50, 30 ), "" +(skillValues[i] + skillBoosts[i]) );
+				if( GUI.Button( new Rect( 220, pos, 30, 30 ), "", rightArrow ) ) {
+					if( skillValues[i] < 20 ) {
+						skillValues[i]++;
+					}
+				}
+			}
+			GUI.EndGroup();
+
             if (GUI.Button(new Rect(10, Screen.height - 55, 256, 46), "Go back")) {
                 panel = CreationPanel.Colors;
 			} else if( GUI.Button( new Rect( Screen.width - 266, Screen.height-55, 256, 46 ), "Begin game" ) ) {
