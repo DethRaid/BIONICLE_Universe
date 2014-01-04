@@ -98,11 +98,11 @@ public class CharacterCreator : MonoBehaviour
 	//con 7
 	//wil 3
 	public string[] statDescriptions = {
-		"Strength (STR) allows a character to influct more melee damage. It also influences a number of skills.",
-		"Speed (SPD) gives a character a chance to decrease damage taken, as well as affecting movement speed and influencing a number of skills.",
+		"Strength (STR) allows a character to inflict more melee damage. It also influences a number of skills.",
+		"Speed (SPD) gives a character a chance to decrease damage taken. It also affects movement speed and influences a number of skills.",
 		"Confidence (CON) gives a character a significant leg up in social interactions. It can affect things like prices of goods or one's ability to convince others of a thing.",
-		"Willpower (WIL) describes how hard one can concentrate. A high Willpower will increase one's ability to use a mask while under attack, and will allow one to take more damage before it affects them.",
-		"Strategy (SGY) lets a character formulate ays of solving problems and thus can affect literally anything. It scales exponentially and affects a number of skills.",
+		"Willpower (WIL) describes how hard one can concentrate. A high Willpower will increase one's ability to use a mask while under attack, and will allow one to take more damage.",
+		"Strategy (SGY) lets a character formulate different ways of solving problems and thus can affect literally anything. It scales exponentially and affects a number of skills.",
 		"Accuracy (ACC) is a mesaure of how careful a character can be. It affects ranged damage and a number of skills which involve the use os hands."
 	};
     public GUISkin mainSkin, koroSkin;
@@ -123,6 +123,8 @@ public class CharacterCreator : MonoBehaviour
 	public Vector3 targetPosition;
 
 	public Transform rotater;
+
+	private string curmsg = "";
 
     public enum CreationPanel
     {
@@ -174,6 +176,7 @@ public class CharacterCreator : MonoBehaviour
 	public void loadSkillBoosts( int koro ) {
 		switch( koro ) {
 		case 0:
+			skillBoosts = new int[28];
 			skillBoosts[0] = 15;
 			skillBoosts[1] = 10;
 			skillBoosts[2] = 5;
@@ -225,14 +228,18 @@ public class CharacterCreator : MonoBehaviour
 			}
         }
 		else if (panel == CreationPanel.Vitals) {
+			/****************************************************
+			 * Masks
+			 ****************************************************/
             GUI.BeginGroup(new Rect(10, 10, 200, 310));
 	            GUI.Box(new Rect(0, 0, 200, 280), "");
-	            GUI.Label(new Rect(30, 10, 140, 30), "Select a starting mask");
+	            GUI.Label(new Rect(30, -4, 140, 30), "Select a starting mask");
 				masks[mask].SetActive( false );
-	            mask = GUI.SelectionGrid(new Rect(10, 40, 180, 240), mask, maskImages, 3);
+	            mask = GUI.SelectionGrid(new Rect(10, 30, 180, 240), mask, maskImages, 3);
 				masks[mask].SetActive( true );
 				masks[mask].renderer.material = materials[mainColor];
             GUI.EndGroup();
+
 			/*
 			 * Dem stats
 			 * 
@@ -245,7 +252,7 @@ public class CharacterCreator : MonoBehaviour
 			 */
             GUI.BeginGroup(new Rect(210, 10, 200, 310));
 	            GUI.Box(new Rect(0, 0, 200, 280), "");
-	            GUI.Label(new Rect(30, 10, 140, 30), "Choose your vital stats");
+	            GUI.Label(new Rect(30, -4, 140, 30), "Choose your vital stats");
 			
 				GUI.Label( new Rect( 10, 50, 180, 30 ), 
 			          "Points left: " +(pointsAllowed - (str + spd + con + wil + srg + acc)) );
@@ -257,102 +264,120 @@ public class CharacterCreator : MonoBehaviour
 				if( GUI.Button( new Rect( 100, 80, 30, 30 ), "", leftArrow ) ) {
 					if( str > 1 ) {
 						str--;
+						curmsg = statDescriptions[0];
 					}
 				}
 	            GUI.Label(new Rect(140, 80, 90, 30), "" + str);
 			if( GUI.Button( new Rect( 160, 80, 30, 30), "", rightArrow ) ) {
-					if( str < 20 ) {
-						str++;
-					}
+				if( str < 20 ) {
+					str++;
+					curmsg = statDescriptions[0];
 				}
+			}
 
 	            GUI.Label(new Rect(10, 110, 90, 30), "Speed:");
 			if( GUI.Button( new Rect( 100, 110, 30, 30 ), "", leftArrow ) ) {
 					if( spd > 1 ) {
-						spd--;
+					spd--;
+					curmsg = statDescriptions[1];
 					}
 				}
 				GUI.Label(new Rect(140, 110, 90, 30), "" + spd);
 			if( GUI.Button( new Rect( 160, 110, 30, 30), "", rightArrow ) ) {
 					if( spd < 20 ) {
-						spd++;
+					spd++;
+					curmsg = statDescriptions[1];
 					}
 				}
 
 	            GUI.Label(new Rect(10, 140, 90, 30), "Confidence:");
 			if( GUI.Button( new Rect( 100, 140, 30, 30 ), "", leftArrow ) ) {
 					if( con > 1 ) {
-						con--;
+					con--;
+					curmsg = statDescriptions[2];
 					}
 				}
 				GUI.Label(new Rect(140, 140, 90, 30), "" + con);
 			if( GUI.Button( new Rect( 160, 140, 30, 30), "", rightArrow ) ) {
 					if( con < 20 ) {
-						con++;
+					con++;
+					curmsg = statDescriptions[2];
 					}
 				}
 
 	            GUI.Label(new Rect(10, 170, 90, 30), "Willpower:");
 			if( GUI.Button( new Rect( 100, 170, 30, 30 ), "", leftArrow ) ) {
 					if( wil > 1 ) {
-						wil--;
+					wil--;
+					curmsg = statDescriptions[3];
 					}
 				}
 				GUI.Label(new Rect(140, 170, 90, 30), "" + wil);
 			if( GUI.Button( new Rect( 160, 170, 30, 30), "", rightArrow ) ) {
 					if( wil < 20 ) {
-						wil++;
+					wil++;
+					curmsg = statDescriptions[3];
 					}
 				}
 
 	            GUI.Label(new Rect(10, 200, 90, 30), "Strategy:");
 			if( GUI.Button( new Rect( 100, 200, 30, 30 ), "", leftArrow ) ) {
 					if( srg > 1 ) {
-						srg--;
+					srg--;
+					curmsg = statDescriptions[4];
 					}
 				}
 				GUI.Label(new Rect(140, 200, 90, 30), "" + srg);
 			if( GUI.Button( new Rect( 160, 200, 30, 30), "", rightArrow ) ) {
 					if( srg < 20 ) {
-						srg++;
+					srg++;
+					curmsg = statDescriptions[4];
 					}
 				}
 
 	            GUI.Label(new Rect(10, 230, 90, 30), "Accuracy:");
 			if( GUI.Button( new Rect( 100, 230, 30, 30 ), "", leftArrow ) ) {
 					if( acc > 1 ) {
-						acc--;
+					acc--;
+					curmsg = statDescriptions[5];
 					}
 				}
 				GUI.Label(new Rect(140, 230, 90, 30), "" + acc);
 			if( GUI.Button( new Rect( 160, 230, 30, 30), "", rightArrow ) ) {
 					if( acc < 20 ) {
-						acc++;
+					acc++;
+					curmsg = statDescriptions[5];
 					}
 				}
             GUI.EndGroup();
 
-			GUI.BeginGroup( new Rect( 410, 10, 250, 620 ) );
-			GUI.Box(new Rect(0, 0, 250, 620), "");
-			GUI.Label(new Rect(60, -5, 140, 30), "Allocate Skill Points");
+			//skills
+			GUI.BeginGroup( new Rect( 410, 10, 250, 800 ) );
+			GUI.Box(new Rect(0, 0, 250, 725), "");
+			GUI.Label(new Rect(60, -4, 140, 30), "Allocate Skill Points");
 			
 			GUI.Label( new Rect( 10, 20, 180, 30 ), 
 			          "Points left: " +(srg * 8) );
 			for( int i = 0; i < 28; i++ ) {
-				int pos = i*25 + 40;
-				GUI.Label( new Rect( 10, pos, 200, 30 ), skills[i] );
-				if( GUI.Button( new Rect( 170, pos, 30, 30 ), "", leftArrow ) ) {
+				int posy = (i)*25 + 40;
+				GUI.Label( new Rect( 10, posy, 200, 30 ), skills[i] );
+				if( GUI.Button( new Rect( 170, posy, 30, 30 ), "", leftArrow ) ) {
 					if( skillValues[i] > 0 ) {
 						skillValues[i]--;
 					}
 				}
-				GUI.Label ( new Rect( 205, pos - 2, 50, 30 ), "" +(skillValues[i] + skillBoosts[i]) );
-				if( GUI.Button( new Rect( 220, pos, 30, 30 ), "", rightArrow ) ) {
+				GUI.Label ( new Rect( 205, posy - 2, 50, 30 ), "" +(skillValues[i] + skillBoosts[i]) );
+				if( GUI.Button( new Rect( 220, posy, 30, 30 ), "", rightArrow ) ) {
 					if( skillValues[i] < 20 ) {
 						skillValues[i]++;
 					}
 				}
 			}
+			GUI.EndGroup();
+
+			//descriptions
+			GUI.BeginGroup( new Rect( 10, 320, 200, 310 ) );
+			GUI.Box( new Rect( 0, 0, 200, 250 ), curmsg );
 			GUI.EndGroup();
 
             if (GUI.Button(new Rect(10, Screen.height - 55, 256, 46), "Go back")) {
