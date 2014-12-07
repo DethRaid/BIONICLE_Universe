@@ -1,5 +1,5 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Character Creation\Scripts\CharacterCreator.cs">
     <Files>
       <File FileName="Assets\Character Creation\Scripts\CharacterCreator.cs" Line="179" Column="30" />
